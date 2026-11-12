@@ -22,7 +22,7 @@ export function Home() {
                 </div>
 
                 <p className="home-description">
-                    Welcome to my professional portfolio! Here you'll 
+                    Welcome to my professional portfolio. Here you'll 
                     find the projects, skills, and experiences that shape my work.
                 </p>
 
