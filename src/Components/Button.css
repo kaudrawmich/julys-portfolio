@@ -1,0 +1,93 @@
+/* 
+Button.css: Button styles
+*/
+
+/* Base button */
+.custom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 24px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    
+    /* Button gradient */
+    --button-gradient: linear-gradient(
+        180deg,
+        #00D100 0%,
+        #00D100 45%,
+        #008D00 100%
+    );
+}
+
+/* Filled button */
+.custom-button--filled {
+    /*background-color: var(--accent-obs); */
+    background: var(--button-gradient);
+    color: white;
+    border-color: var(--accent-obs);
+}
+
+.custom-button--filled:hover {
+    background: #00FF00;
+    border-color: #00FF00;
+}
+
+/* Outlined button */
+.custom-button--outline {
+    background-color: transparent;
+    color: white;
+    border-color: var(--accent);
+}
+
+.custom-button--outline:hover {
+    background-color: rgba(105, 201, 154, 0.12);
+    border-color: #00FF00;
+}
+
+
+/* Pill-shaped */
+.custom-button--pill {
+    border-radius: 999px;
+}
+
+/* Circular icon button */
+.custom-button--circle {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/* Keyboard focus */
+.custom-button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Disabled */
+.custom-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Press effect */
+.custom-button:not(:disabled):active {
+    transform: scale(0.97);
+}

@@ -1,0 +1,73 @@
+/* 
+index.css: Global styles
+*/
+
+:root {
+    /* Text colors */
+    --text: #B3C7B3;
+    --text-h: white;
+    --bg: #02170d;
+    --accent: #2FFE2F;
+    --accent-obs: #008D00;
+
+    /* Background gradient */
+    --bg-gradient: linear-gradient(
+        135deg,
+        #123d2b 0%,
+        #082719 45%,
+        #02170d 100%
+    );
+
+    /* Font families */
+    --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+    --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+    --mono: ui-monospace, Consolas, monospace;
+
+    /* Global styles */
+    font: 18px/145% var(--sans);
+    color: var(--text);
+    background: var(--bg);
+}
+
+/* Reset some default styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: var(--sans);
+
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+
+    color: var(--text);
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography */
+
+h1, h2, h3 {
+    font-family: var(--heading);
+    color: var(--text-h);
+    margin: 0;
+}
+
+code {
+    font-family: var(--mono);
+}

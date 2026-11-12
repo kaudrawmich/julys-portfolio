@@ -1,0 +1,116 @@
+/* 
+Home.css: Home styles
+*/
+
+/* Home page layout */
+.home {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px;
+
+    width: 100%;
+    max-width: 1400px;
+    min-height: 80vh;
+
+    margin: 0 auto;
+    padding: 40px 50px;
+}
+
+/* Left section */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Main introduction */
+.home-content h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+/* Highlight name */
+.home-content h1 span {
+    color: #2FFE2F;
+}
+
+/* Professional titles */
+.home-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.home-titles h2 {
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    font-weight: 600;
+    color: white;
+}
+
+.home-titles h3 {
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-weight: 500;
+    color: #2FFE2F;
+}
+
+/* Welcome description */
+.home-description {
+    max-width: 550px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+/* Right section */
+.home-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: none;
+    filter: drop-shadow(0 0 8px var(--accent));
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+    .home {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 24px;
+        text-align: center;
+    }
+
+    .home-content {
+        align-items: center;
+    }
+
+    .home-image img {
+        max-width: 300px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .home {
+        padding: 30px 20px;
+    }
+
+    .home-image img {
+        max-width: 240px;
+    }
+}
