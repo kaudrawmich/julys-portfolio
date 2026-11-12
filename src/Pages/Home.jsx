@@ -3,6 +3,8 @@ Home.jsx: First page of the Portfolio
 */
 import { Download } from 'lucide-react'
 import { Button } from '../Components/Button.jsx'
+import julypicture from '../assets/julypicture.png'
+import Julia_Pinedo_CV from '../assets/Julia_Pinedo_CV.pdf'
 import './Home.css'
 
 export function Home() {
@@ -27,7 +29,7 @@ export function Home() {
                 <Button 
                     variant="filled"
                     shape="pill"
-                    href="/Julia_Pinedo_CV.pdf"
+                    href={Julia_Pinedo_CV}
                     download="Julia_Pinedo_CV.pdf"
                 >
                     <Download size={18} />
@@ -37,7 +39,7 @@ export function Home() {
 
             {/* Right section */}
             <section className="home-image">
-                <img src="julypicture.png" alt="Julia's profile"/>
+                <img src={julypicture} alt="Julia's profile"/>
             </section>
         </main>
     )

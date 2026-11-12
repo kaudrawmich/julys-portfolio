@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
+import kau from '../assets/kau.png'
 import './Navbar.css'
 
 export function Navbar() {
     return (
         <nav className="navbar">
             {/* Branding element */}  
-            <img src="/kau.png" alt="Julia Pinedo" className="navbar-logo"/>
+            <img src={kau} alt="Julia Pinedo" className="navbar-logo"/>
             
             {/* Functional buttons */}  
             <div className="navbar-links">
