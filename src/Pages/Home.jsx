@@ -18,7 +18,7 @@ export function Home() {
 
                 <div className="home-titles">
                     <h2>M.Sc. in Applied Artificial Intelligence</h2>
-                    <h3>Senior Test Engineer</h3>
+                    <h3 style={{ marginTop: '10px' }}>Senior Test Engineer</h3>
                 </div>
 
                 <p className="home-description">
