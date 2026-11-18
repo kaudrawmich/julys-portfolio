@@ -69,10 +69,11 @@ Button.css: Button styles
 
 /* Circular icon button */
 .custom-button--circle {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     padding: 0;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 /* Keyboard focus */

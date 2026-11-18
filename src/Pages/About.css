@@ -74,7 +74,7 @@ About.css: About page styles
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 24px;
 }
 
 .about-content h2 {
@@ -82,10 +82,19 @@ About.css: About page styles
     color: white;
 }
 
+/* Biography paragraphs */
+.about-biography {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .about-quote {
+    font-size: 1.2rem;
     font-style: italic;
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    font-weight: 500;
     color: #2FFE2F;
+    margin: 0;
 }
 
 .about-description {
@@ -93,6 +102,18 @@ About.css: About page styles
     font-size: 1.05rem;
     line-height: 1.8;
     color: var(--text);
+    margin: 0;
+}
+
+/* Social media buttons */
+.about-socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 20px;
 }
 
 /* Horizontal divider */
@@ -114,16 +135,8 @@ About.css: About page styles
 
 .about-interests h2 {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #2FFE2F;
     margin-bottom: 30px;
-}
-
-/* Interest buttons */
-.about-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 /* Tablet and mobile */
@@ -162,5 +175,11 @@ About.css: About page styles
 @media (max-width: 480px) {
     .about-globe {
         margin-left: 8px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-socials {
+        justify-content: center;
     }
 }

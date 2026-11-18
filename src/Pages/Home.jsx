@@ -32,7 +32,7 @@ export function Home() {
                     href={Julia_Pinedo_CV}
                     download="Julia_Pinedo_CV.pdf"
                 >
-                    <Download size={18} />
+                    <Download size={24} />
                     Download CV
                 </Button>
             </section>
