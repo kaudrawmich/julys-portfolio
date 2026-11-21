@@ -12,6 +12,14 @@ import './About.css'
 
 export function About() {
     const [activeSlide, setActiveSlide] = useState(0)
+
+    const nextSlide = () => {
+        setActiveSlide((prev) => (prev + 1) % 2)
+    }
+    const previousSlide = () => {
+        setActiveSlide((prev) => Math.max(prev - 1, 0))
+    }
+
     console.log('About page rendered...')
     
     return (
@@ -26,81 +34,131 @@ export function About() {
                 </h1>
             </header>
 
+            {/* Slider */}
+            <section className="about-slider">
+                <button
+                    className="about-arrow"
+                    onClick={previousSlide}
+                    aria-label="Previous slide"
+                    type="button"
+                    disabled={activeSlide === 0}
+                >
+                    <ChevronLeft size={28} />
+                </button>
 
+                <div className="about-slide-content">
+                    {activeSlide === 0 ? (
 
-            {/* Introduction */}
-            <section className="about-intro">
-                {/* My picture */}
-                <div className="about-image">
-                    <img src={me} alt="Julia's picture"/>
+                        /* Introduction */
+                        <section className="about-intro">
+                            {/* My picture */}
+                            <div className="about-image">
+                                <img src={me} alt="Julia's picture"/>
+                            </div>
+
+                            {/* Text introduction */}
+                            <section className="about-content">
+                                <p className="about-description">
+                                    My name is Julia, a <strong>Mexico-based</strong> Mechatronics Engineer with an M.Sc. in Applied Artificial Intelligence.
+                                </p>
+                                <p className="about-description">
+                                    I've always enjoyed asking myself how things work, then working hard until I find an answer. 
+                                    That led me to study Mechatronics Engineering, where I discovered my passion for combining 
+                                    mathematics, programming, and engineering to solve real-world problems.
+                                </p>
+                                <p className="about-description">
+                                    For the past <strong>three years</strong>, I've worked as a Software Development Engineer in Test (SDET), specializing in 
+                                    iOS software quality and test automation using Python.
+                                </p>
+                                <p className="about-description">
+                                    Over time, my interests have expanded beyond physical systems to software engineering, machine learning, 
+                                    and artificial intelligence.
+                                </p>
+                                <p className="about-description">
+                                    I created this portfolio to share my engineering journey, the projects I've worked on, 
+                                    and the ideas I'm excited to explore. <strong>Let's connect!</strong>
+                                </p>
+
+                                <section className="about-socials">
+                                    <Button 
+                                        variant="filled"
+                                        shape="circle"
+                                        href="https://github.com/kaudrawmich"
+                                        target="_blank"
+                                        ariaLabel="GitHub"
+                                    >
+                                        <FaGithub size={24} />
+                                    </Button>
+
+                                    <Button 
+                                        variant="filled"
+                                        shape="circle"
+                                        href="https://www.instagram.com/art.by.julypin"
+                                        target="_blank"
+                                        ariaLabel="Instagram"
+                                    >
+                                        <FaInstagram size={24} />
+                                    </Button>
+
+                                    <Button 
+                                        variant="filled"
+                                        shape="circle"
+                                        href="https://www.youtube.com/@itsjulypin"
+                                        target="_blank"
+                                        ariaLabel="YouTube"
+                                    >
+                                        <FaYoutube size={24} />
+                                    </Button>
+
+                                    <Button 
+                                        variant="filled"
+                                        shape="circle"
+                                        href="https://www.linkedin.com/in/juliapinedo"
+                                        target="_blank"
+                                        ariaLabel="LinkedIn"
+                                    >
+                                        <FaLinkedinIn size={24} />
+                                    </Button>
+                                </section>
+                            </section>
+                        </section>
+
+                    ) : (
+
+                        /* Beyond Work section */
+                        <section>
+                        </section>
+                    )}
                 </div>
 
-                {/* Text introduction */}
-                <section className="about-content">
-                    <p className="about-description">
-                        My name is Julia, a <strong>Mexico-based</strong> Mechatronics Engineer with an M.Sc. in Applied Artificial Intelligence.
-                    </p>
-                    <p className="about-description">
-                        I've always enjoyed asking myself how things work, then working hard until I find an answer. 
-                        That led me to study Mechatronics Engineering, where I discovered my passion for combining 
-                        mathematics, programming, and engineering to solve real-world problems.
-                    </p>
-                    <p className="about-description">
-                        For the past <strong>three years</strong>, I've worked as a Software Development Engineer in Test (SDET), specializing in 
-                        iOS software quality and test automation using Python.
-                    </p>
-                    <p className="about-description">
-                        Over time, my interests have expanded beyond physical systems to software engineering, machine learning, 
-                        and artificial intelligence.
-                    </p>
-                    <p className="about-description">
-                        I created this portfolio to share my engineering journey, the projects I've worked on, 
-                        and the ideas I'm excited to explore. <strong>Let's connect!</strong>
-                    </p>
-
-                    <section className="about-socials">
-                        <Button 
-                        variant="filled"
-                        shape="circle"
-                        href="https://github.com/kaudrawmich"
-                        target="_blank"
-                        ariaLabel="GitHub"
-                        >
-                        <FaGithub size={24} />
-                        </Button>
-
-                        <Button 
-                        variant="filled"
-                        shape="circle"
-                        href="https://www.instagram.com/art.by.julypin"
-                        target="_blank"
-                        ariaLabel="Instagram"
-                        >
-                        <FaInstagram size={24} />
-                        </Button>
-
-                        <Button 
-                        variant="filled"
-                        shape="circle"
-                        href="https://www.youtube.com/@itsjulypin"
-                        target="_blank"
-                        ariaLabel="YouTube"
-                        >
-                        <FaYoutube size={24} />
-                        </Button>
-
-                        <Button 
-                        variant="filled"
-                        shape="circle"
-                        href="https://www.linkedin.com/in/juliapinedo"
-                        target="_blank"
-                        ariaLabel="LinkedIn"
-                        >
-                        <FaLinkedinIn size={24} />
-                        </Button>
-                    </section>
-                </section>
+                <button 
+                    className="about-arrow"
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                    type="button"
+                >
+                    <ChevronRight size={28} />
+                </button>
             </section>
+
+            {/* Pagination dots */}
+            <div className="about-pagination">
+                <button
+                    className={`about-dot ${activeSlide === 0 ? 'active' : ''}`}
+                    onClick={() => setActiveSlide(0)}
+                    aria-label="Show introduction"
+                    aria-pressed={activeSlide === 0}
+                    type="button"
+                />
+
+                <button
+                    className={`about-dot ${activeSlide === 1 ? 'active' : ''}`}
+                    onClick={() => setActiveSlide(1)}
+                    aria-label="Show beyond work"
+                    aria-pressed={activeSlide === 1}
+                    type="button"
+                />
+            </div>
         </main>
     )
 }

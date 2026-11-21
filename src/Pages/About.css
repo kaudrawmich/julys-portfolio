@@ -12,20 +12,20 @@ About.css: About page styles
     max-width: 1400px;
     margin: 0 auto;
 
-    padding: 8px 50px 20px;
+    padding: 0 50px 8px;
 }
 
 /* Centered page heading */
 .about-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .about-header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 15px;
 
     font-size: clamp(2.8rem, 5vw, 4.5rem);
     font-weight: 800;
@@ -56,6 +56,127 @@ About.css: About page styles
     filter: drop-shadow(0 0 6px #2FFE2F80);
 }
 
+/* Slider */
+
+/* Slider container */
+.about-slider {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+}
+
+/* Slide content */
+.about-slide-content {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Navigation arrows */
+.about-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+
+    color: white;
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        filter 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Arrow hover */
+.about-arrow:not(:disabled):hover {
+    color: #2FFE2F;
+    filter: drop-shadow(0 0 8px rgba(47, 254, 47, 0.65));
+    transform: scale(1.1);
+}
+
+/* Disabled arrow */
+.about-arrow:disabled {
+    color: rgba(255, 255, 255, 0.2);
+    cursor: default;
+}
+
+.about-arrow:hover {
+    color: #2FFE2F;
+    transform: scale(1.1);
+}
+
+.about-arrow:active {
+    transform: scale(0.95);
+}
+
+.about-arrow:focus-visible {
+    outline: 2px solid #2FFE2F;
+    outline-offset: 4px;
+}
+
+/* Pagination dots */
+.about-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.about-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Active pagination dot */
+.about-dot.active {
+    background: #2FFE2F;
+
+    box-shadow:
+        0 0 6px rgba(47, 254, 47, 0.7),
+        0 0 12px rgba(47, 254, 47, 0.3);
+
+    transform: scale(1.2);
+}
+
+/* Pagination hover */
+.about-dot:hover {
+    background: #2FFE2F;
+    box-shadow: 0 0 8px rgba(47, 254, 47, 0.5);
+}
+
+/* Keyboard accessibility */
+.about-arrow:focus-visible,
+.about-dot:focus-visible {
+    outline: 2px solid #2FFE2F;
+    outline-offset: 4px;
+}
+
+/* Slide 1: INTRODUCTION */
+
 /* Two-column layout */
 .about-intro {
     display: grid;
@@ -78,7 +199,9 @@ About.css: About page styles
     display: block;
     width: 100%;
     max-width: 490px;
+    max-height: 65vh;
     height: auto;
+    object-fit: contain;
 
     border: none;
     border-radius: 0;
@@ -103,7 +226,7 @@ About.css: About page styles
 .about-description {
     max-width: 650px;
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.65;
     color: var(--text);
     margin: 0;
 }
@@ -115,15 +238,121 @@ About.css: About page styles
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 14px;
-    margin-top: 10px;
+
+    margin-top: 4px;
 }
 
-/* Tablet and mobile */
+/* Slide 2: BEYOND WORK */
+
+/* Two-column layout */
+.about-beyond {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+}
+
+/* Left: Drawing */
+.about-beyond-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.about-beyond-image img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+/* Right: Interests */
+.about-beyond-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+    text-align: center;
+}
+
+.about-beyond-content h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: #2FFE2F;
+    margin: 0;
+}
+
+/* Interests grid */
+.about-interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+
+    width: 100%;
+}
+
+/* Individual interest cards */
+.interest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 24px 16px;
+
+    background: rgba(47, 254, 47, 0.04);
+    border: 1px solid rgba(47, 254, 47, 0.25);
+    border-radius: 14px;
+}
+
+/* Interest icons */
+.interest-card svg {
+    color: #2FFE2F;
+}
+
+/* Interest titles */
+.interest-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+/* Interests description */
+.about-interests-description {
+    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+}
+
+/* Mobile screens */
+
 @media (max-width: 900px) {
+
     .about {
         padding: 40px 24px;
     }
 
+    /* Slider */
+    .about-slider {
+        grid-template-columns: 28px minmax(0, 1fr) 28px;
+        gap: 6px;
+    }
+
+    .about-arrow {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Introduction */
     .about-intro {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -142,15 +371,31 @@ About.css: About page styles
     .about-socials {
         justify-content: center;
     }
+
+    /* Beyond Work */
+    .about-beyond {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-beyond-image img {
+        max-width: 300px;
+    }
+
+    .about-beyond-content {
+        align-items: center;
+    }
 }
 
-
 /* Small mobile screens */
+
 @media (max-width: 480px) {
+
     .about {
         padding: 30px 20px;
     }
 
+    /* Page heading */
     .about-header h1 {
         display: block;
         text-align: center;
@@ -172,7 +417,41 @@ About.css: About page styles
         filter: drop-shadow(0 0 4px #2FFE2F80);
     }
 
+    /* Slider */
+    .about-slider {
+        grid-template-columns: 24px minmax(0, 1fr) 24px;
+        gap: 4px;
+    }
+
+    .about-arrow {
+        width: 24px;
+        height: 24px;
+    }
+
+    .about-arrow svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Introduction */
+    .about-intro {
+        gap: 30px;
+    }
+
     .about-image img {
         max-width: 240px;
+    }
+
+    /* Beyond Work */
+    .about-beyond-image img {
+        max-width: 240px;
+    }
+
+    .about-interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-card {
+        padding: 20px 14px;
     }
 }
