@@ -19,12 +19,14 @@ export function About() {
             {/* Page heading */}
             <header className="about-header">
                 <h1>
-                    Welcome to my <span>world</span>
+                    <span className="about-title-text">
+                        Welcome to my <span>world</span>
+                    </span>
                     <GlobeIcon className="about-globe" size="0.75em" />
                 </h1>
             </header>
 
-            
+
 
             {/* Introduction */}
             <section className="about-intro">
@@ -98,35 +100,6 @@ export function About() {
                         </Button>
                     </section>
                 </section>
-            </section>
-
-            {/* Divider */}
-            <hr className="about-divider" />
-
-            <section className="about-interests">
-                <h2> Beyond work... </h2>
-                <div className="about-interests-grid">
-                    <div className="interest-card">
-                        <SixteenthNotes size={32} />
-                        <h3>Music</h3>
-                    </div>
-                    <div className="interest-card">
-                        <Palette size={32} />
-                        <h3>Art</h3>
-                    </div>
-                    <div className="interest-card">
-                        <FerrisWheel size={32} />
-                        <h3>Roller Coasters</h3>
-                    </div>
-                    <div className="interest-card">
-                        <Gamepad2 size={32} />
-                        <h3>Videogames</h3>
-                    </div>
-                </div>
-                <p className="about-interests-description">
-                    I enjoy learning new things and solving tricky problems.
-                    Whatever challenges me to think harder, I’m all in!
-                </p>
             </section>
         </main>
     )
