@@ -2,6 +2,7 @@
 About.jsx: Second page of the Portfolio
 */
 import { FaGithub, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
+import { SixteenthNotes, Gamepad2, FerrisWheel, Palette } from 'lucide-react'
 import { Button } from '../Components/Button.jsx'
 import { GlobeIcon } from '../Components/GlobeIcon.jsx'
 import me from '../assets/me.png'
@@ -100,6 +101,28 @@ export function About() {
 
             <section className="about-interests">
                 <h2> Beyond work... </h2>
+                <div className="about-interests-grid">
+                    <div className="interest-card">
+                        <SixteenthNotes size={32} />
+                        <h3>Music</h3>
+                    </div>
+                    <div className="interest-card">
+                        <Palette size={32} />
+                        <h3>Art</h3>
+                    </div>
+                    <div className="interest-card">
+                        <FerrisWheel size={32} />
+                        <h3>Roller Coasters</h3>
+                    </div>
+                    <div className="interest-card">
+                        <Gamepad2 size={32} />
+                        <h3>Videogames</h3>
+                    </div>
+                </div>
+                <p className="about-interests-description">
+                    I enjoy learning new things and solving tricky problems.
+                    Whatever challenges me to think harder, I’m all in!
+                </p>
             </section>
         </main>
     )

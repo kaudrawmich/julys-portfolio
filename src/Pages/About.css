@@ -127,16 +127,80 @@ About.css: About page styles
     opacity: 0.5;
 }
 
-/* Other interests */
+/* "Beyond work..." section */
 .about-interests {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    padding: 40px 0 80px;
     text-align: center;
-    padding: 20px 0 60px;
 }
 
 .about-interests h2 {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
     color: #2FFE2F;
     margin-bottom: 30px;
+}
+
+.about-interests-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.about-interests-description {
+    max-width: 800px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+}
+
+/* Cards container */
+.about-interests-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    width: 100%;
+    margin-top: 16px;
+}
+
+/* Individual card */
+.interest-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 28px 20px;
+
+    background: rgba(47, 254, 47, 0.04);
+    border: 1px solid rgba(47, 254, 47, 0.25);
+    border-radius: 14px;
+}
+
+/* Card icon */
+.interest-card svg {
+    color: #2FFE2F;
+}
+
+/* Card title */
+.interest-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* Card description */
+.interest-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text);
 }
 
 /* Tablet and mobile */
@@ -181,5 +245,19 @@ About.css: About page styles
 @media (max-width: 900px) {
     .about-socials {
         justify-content: center;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .about-interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .about-interests-grid {
+        grid-template-columns: 1fr;
     }
 }
