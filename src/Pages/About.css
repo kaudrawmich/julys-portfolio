@@ -144,17 +144,35 @@ About.css: About page styles
     }
 }
 
+
 /* Small mobile screens */
 @media (max-width: 480px) {
     .about {
         padding: 30px 20px;
     }
 
-    .about-image img {
-        max-width: 240px;
+    .about-header h1 {
+        display: block;
+        text-align: center;
+
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .about-title-text {
+        display: inline;
     }
 
     .about-globe {
+        display: inline-flex;
+        vertical-align: middle;
+
         margin-left: 8px;
+        filter: drop-shadow(0 0 4px #2FFE2F80);
+    }
+
+    .about-image img {
+        max-width: 240px;
     }
 }
