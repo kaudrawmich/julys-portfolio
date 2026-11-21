@@ -1,8 +1,9 @@
 /* 
 About.jsx: Second page of the Portfolio
 */
+import { useState } from 'react'
 import { FaGithub, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
-import { SixteenthNotes, Gamepad2, FerrisWheel, Palette } from 'lucide-react'
+import { SixteenthNotes, Gamepad2, FerrisWheel, Palette, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '../Components/Button.jsx'
 import { GlobeIcon } from '../Components/GlobeIcon.jsx'
 import me from '../assets/me.png'
@@ -10,6 +11,7 @@ import './About.css'
 
 
 export function About() {
+    const [activeSlide, setActiveSlide] = useState(0)
     console.log('About page rendered...')
     
     return (
@@ -21,6 +23,8 @@ export function About() {
                     <GlobeIcon className="about-globe" size="0.75em" />
                 </h1>
             </header>
+
+            
 
             {/* Introduction */}
             <section className="about-intro">
