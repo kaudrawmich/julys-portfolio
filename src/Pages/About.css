@@ -110,11 +110,6 @@ About.css: About page styles
     cursor: default;
 }
 
-.about-arrow:hover {
-    color: #2FFE2F;
-    transform: scale(1.1);
-}
-
 .about-arrow:active {
     transform: scale(0.95);
 }

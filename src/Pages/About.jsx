@@ -14,7 +14,7 @@ export function About() {
     const [activeSlide, setActiveSlide] = useState(0)
 
     const nextSlide = () => {
-        setActiveSlide((prev) => (prev + 1) % 2)
+        setActiveSlide((prev) => Math.min(prev + 1, 1))
     }
     const previousSlide = () => {
         setActiveSlide((prev) => Math.max(prev - 1, 0))
@@ -136,6 +136,7 @@ export function About() {
                     onClick={nextSlide}
                     aria-label="Next slide"
                     type="button"
+                    disabled={activeSlide === 1}
                 >
                     <ChevronRight size={28} />
                 </button>
