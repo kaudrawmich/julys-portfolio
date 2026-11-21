@@ -142,22 +142,9 @@ export function About() {
             </section>
 
             {/* Pagination dots */}
-            <div className="about-pagination">
-                <button
-                    className={`about-dot ${activeSlide === 0 ? 'active' : ''}`}
-                    onClick={() => setActiveSlide(0)}
-                    aria-label="Show introduction"
-                    aria-pressed={activeSlide === 0}
-                    type="button"
-                />
-
-                <button
-                    className={`about-dot ${activeSlide === 1 ? 'active' : ''}`}
-                    onClick={() => setActiveSlide(1)}
-                    aria-label="Show beyond work"
-                    aria-pressed={activeSlide === 1}
-                    type="button"
-                />
+            <div className="about-pagination" aria-label="Slide position">
+                <span className={`about-dot ${activeSlide === 0 ? 'active' : ''}`} />
+                <span className={`about-dot ${activeSlide === 1 ? 'active' : ''}`} />
             </div>
         </main>
     )
