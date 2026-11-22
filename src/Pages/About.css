@@ -1,6 +1,7 @@
 /*
 About.css: About page styles
 */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
 
 /* Main page container */
 .about {
@@ -56,7 +57,7 @@ About.css: About page styles
     filter: drop-shadow(0 0 6px #2FFE2F80);
 }
 
-/* Slider */
+/* SLIDER */
 
 /* Slider container */
 .about-slider {
@@ -110,7 +111,7 @@ About.css: About page styles
     cursor: default;
 }
 
-.about-arrow:active {
+.about-arrow:not(:disabled):active {
     transform: scale(0.95);
 }
 
@@ -154,20 +155,7 @@ About.css: About page styles
     transform: scale(1.2);
 }
 
-/* Pagination hover */
-.about-dot:hover {
-    background: #2FFE2F;
-    box-shadow: 0 0 8px rgba(47, 254, 47, 0.5);
-}
-
-/* Keyboard accessibility */
-.about-arrow:focus-visible,
-.about-dot:focus-visible {
-    outline: 2px solid #2FFE2F;
-    outline-offset: 4px;
-}
-
-/* Slide 1: INTRODUCTION */
+/* SLIDE 1: INTRODUCTION */
 
 /* Two-column layout */
 .about-intro {
@@ -234,49 +222,52 @@ About.css: About page styles
     margin-top: 4px;
 }
 
-/* Slide 2: BEYOND WORK */
+/* SLIDE 2: BEYOND WORK */
 
-/* Two-column layout */
+/* Three-column layout */
 .about-beyond {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 
     width: 100%;
+    min-height: min(540px, 60vh);
 }
 
-/* Left: Drawing */
-.about-beyond-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.about-beyond-image img {
-    display: block;
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-}
-
-/* Right: Interests */
-.about-beyond-content {
+/* Left: Personal interests */
+.about-beyond-interests {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    justify-content: center;
+    gap: 26px;
 
     width: 100%;
-    text-align: center;
+    min-width: 0;
 }
 
-.about-beyond-content h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+/* Handwritten title */
+.about-beyond-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: 'Kalam', cursive;
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
+    line-height: 1.2;
+
     color: #2FFE2F;
     margin: 0;
+    white-space: nowrap;
+}
+
+.about-beyond-title svg {
+    color: #2FFE2F;
+    flex-shrink: 0;
+    transform: rotate(-15deg);
 }
 
 /* Interests grid */
@@ -294,13 +285,30 @@ About.css: About page styles
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
 
-    padding: 24px 16px;
+    min-height: 150px;
+    padding: 20px 12px;
 
-    background: rgba(47, 254, 47, 0.04);
-    border: 1px solid rgba(47, 254, 47, 0.25);
-    border-radius: 14px;
+    background: rgba(47, 254, 47, 0.025);
+    border: 1px solid rgba(47, 254, 47, 0.55);
+    border-radius: 18px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Interest card hover */
+.interest-card:hover {
+    border-color: #2FFE2F;
+
+    box-shadow:
+        0 0 12px rgba(47, 254, 47, 0.15),
+        inset 0 0 12px rgba(47, 254, 47, 0.04);
+
+    transform: translateY(-4px);
 }
 
 /* Interest icons */
@@ -310,23 +318,146 @@ About.css: About page styles
 
 /* Interest titles */
 .interest-card h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+/* Center: Personal illustration */
+.about-beyond-image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+}
+
+.about-beyond-image img {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    max-height: 60vh;
+    height: auto;
+
+    object-fit: contain;
+    object-position: bottom;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 85%,
+        transparent 100%
+    );
+}
+
+/* Right: Personal description */
+.about-beyond-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+}
+
+/* Personal description heading */
+.about-beyond-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+
     color: white;
     margin: 0;
 }
 
-/* Interests description */
+/* Decorative heart */
+.about-heart {
+    color: #2FFE2F;
+    flex-shrink: 0;
+    transform: rotate(15deg);
+}
+
+/* Decorative underline */
+.about-beyond-underline {
+    width: 160px;
+    height: 3px;
+    margin-top: -14px;
+
+    background: #2FFE2F;
+    border-radius: 50%;
+    transform: rotate(-2deg);
+}
+
+/* Personal description paragraphs */
 .about-interests-description {
-    max-width: 600px;
+    max-width: 390px;
     font-size: 1.05rem;
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--text);
     margin: 0;
 }
 
-/* Mobile screens */
+/* Decorative sparkle */
+.about-decoration {
+    align-self: flex-end;
+    color: #2FFE2F;
+    opacity: 0.8;
+}
 
+/* RESPONSIVE DESIGN */
+
+/* Medium desktop and tablet */
+@media (max-width: 1100px) {
+
+    /* Beyond Work: Two columns */
+    .about-beyond {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 30px;
+        min-height: auto;
+    }
+
+    .about-beyond-image {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        align-items: center;
+    }
+
+    .about-beyond-image img {
+        max-width: 350px;
+        max-height: none;
+    }
+
+    .about-beyond-interests {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .about-beyond-content {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .about-beyond-title {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .interest-card {
+        min-height: 120px;
+    }
+}
+
+/* Tablet and mobile */
 @media (max-width: 900px) {
 
     .about {
@@ -363,24 +494,58 @@ About.css: About page styles
     .about-socials {
         justify-content: center;
     }
+}
 
-    /* Beyond Work */
+/* Mobile */
+@media (max-width: 700px) {
+
+    /* Beyond Work: Single column */
     .about-beyond {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 30px;
     }
 
+    .about-beyond-image {
+        grid-column: 1;
+        grid-row: 1;
+        height: auto;
+    }
+
     .about-beyond-image img {
-        max-width: 300px;
+        max-width: 280px;
+    }
+
+    .about-beyond-interests {
+        grid-column: 1;
+        grid-row: 2;
+        gap: 20px;
     }
 
     .about-beyond-content {
+        grid-column: 1;
+        grid-row: 3;
         align-items: center;
+        text-align: center;
+    }
+
+    .about-beyond-title {
+        font-size: 2.3rem;
+    }
+
+    .about-beyond-subtitle {
+        justify-content: center;
+    }
+
+    .about-interests-description {
+        max-width: 450px;
+    }
+
+    .about-decoration {
+        align-self: center;
     }
 }
 
 /* Small mobile screens */
-
 @media (max-width: 480px) {
 
     .about {
@@ -436,14 +601,43 @@ About.css: About page styles
 
     /* Beyond Work */
     .about-beyond-image img {
-        max-width: 240px;
+        max-width: 220px;
     }
 
     .about-interests-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 
     .interest-card {
-        padding: 20px 14px;
+        min-height: 110px;
+        padding: 16px 8px;
+    }
+
+    .interest-card svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .interest-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .about-beyond-title {
+        font-size: 2rem;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .about-arrow,
+    .about-dot,
+    .interest-card {
+        transition: none;
+    }
+
+    .about-arrow:not(:disabled):hover,
+    .interest-card:hover {
+        transform: none;
     }
 }

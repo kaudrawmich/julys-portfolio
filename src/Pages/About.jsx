@@ -3,7 +3,7 @@ About.jsx: Second page of the Portfolio
 */
 import { useState } from 'react'
 import { FaGithub, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
-import { SixteenthNotes, Gamepad2, FerrisWheel, Palette, ChevronLeft, ChevronRight } from 'lucide-react'
+import { SixteenthNotes, Gamepad2, FerrisWheel, Palette, ChevronLeft, ChevronRight, Heart, Sparkles } from 'lucide-react'
 import { Button } from '../Components/Button.jsx'
 import { GlobeIcon } from '../Components/GlobeIcon.jsx'
 import me from '../assets/me.png'
@@ -126,7 +126,66 @@ export function About() {
                     ) : (
 
                         /* Beyond Work section */
-                        <section>
+                        <section className="about-beyond">
+                            {/* Personal interests */}
+                            <div className="about-beyond-interests">
+                                <div>
+                                    <h2 className="about-beyond-title">
+                                        Beyond work...
+                                        <Sparkles size={25} />
+                                    </h2>
+
+                                    <div className="about-interests-grid">
+                                        <div className="interest-card">
+                                            <SixteenthNotes size={40} strokeWidth={1.7} />
+                                            <h3>Music</h3>
+                                        </div>
+
+                                        <div className="interest-card">
+                                            <Palette size={40} strokeWidth={1.7} />
+                                            <h3>Arts</h3>
+                                        </div>
+
+                                        <div className="interest-card">
+                                            <Gamepad2 size={40} strokeWidth={1.7} />
+                                            <h3>Gaming</h3>
+                                        </div>
+
+                                        <div className="interest-card">
+                                            <FerrisWheel size={40} strokeWidth={1.7} />
+                                            <h3>Roller coasters</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Personal illustration */}
+                            <div className="about-beyond-image">
+                                <img src={me} alt="Julia's picture"/>
+                            </div>
+
+                            {/*Short description */}
+                            <div className="about-beyond-content">
+                                <h2 className="about-beyond-subtitle">
+                                    A little more about me
+                                    <Heart className="about-heart" size={30} />
+                                </h2>
+
+                                 <div className="about-beyond-underline" />
+
+                                 <p className="about-interests-description">
+                                    When I'm not working on engineering projects, you'll
+                                    probably find me drawing, listening to music, playing
+                                    videogames, or looking for my next roller coaster adventure.
+                                </p>
+
+                                <p className="about-interests-description">
+                                    These interests keep me creative, curious, and always
+                                    excited to learn something new.
+                                 </p>
+
+                                <Sparkles className="about-decoration" size={32} />
+                            </div>
                         </section>
                     )}
                 </div>
