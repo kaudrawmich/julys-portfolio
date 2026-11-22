@@ -129,32 +129,30 @@ export function About() {
                         <section className="about-beyond">
                             {/* Personal interests */}
                             <div className="about-beyond-interests">
-                                <div>
-                                    <h2 className="about-beyond-title">
+                                <h2 className="about-beyond-title">
                                         Beyond work...
                                         <Sparkles size={25} />
-                                    </h2>
+                                </h2>
 
-                                    <div className="about-interests-grid">
-                                        <div className="interest-card">
-                                            <SixteenthNotes size={40} strokeWidth={1.7} />
-                                            <h3>Music</h3>
-                                        </div>
+                                <div className="about-interests-grid">
+                                     <div className="interest-card">
+                                        <SixteenthNotes size={40} strokeWidth={1.7} />
+                                        <h3>Music</h3>
+                                    </div>
 
-                                        <div className="interest-card">
-                                            <Palette size={40} strokeWidth={1.7} />
-                                            <h3>Arts</h3>
-                                        </div>
+                                     <div className="interest-card">
+                                        <Palette size={40} strokeWidth={1.7} />
+                                        <h3>Arts</h3>
+                                     </div>
 
-                                        <div className="interest-card">
-                                            <Gamepad2 size={40} strokeWidth={1.7} />
-                                            <h3>Gaming</h3>
-                                        </div>
+                                    <div className="interest-card">
+                                        <Gamepad2 size={40} strokeWidth={1.7} />
+                                        <h3>Gaming</h3>
+                                    </div>
 
-                                        <div className="interest-card">
-                                            <FerrisWheel size={40} strokeWidth={1.7} />
-                                            <h3>Roller coasters</h3>
-                                        </div>
+                                     <div className="interest-card">
+                                        <FerrisWheel size={40} strokeWidth={1.7} />
+                                        <h3>Roller coasters</h3>
                                     </div>
                                 </div>
                             </div>
