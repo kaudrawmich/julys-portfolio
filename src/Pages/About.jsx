@@ -172,17 +172,18 @@ export function About() {
                                  <div className="about-beyond-underline" />
 
                                  <p className="about-interests-description">
-                                    When I'm not working on engineering projects, you'll
-                                    probably find me drawing, listening to music, playing
-                                    videogames, or looking for my next roller coaster adventure.
+                                    When I'm not working on engineering projects, 
+                                    you'll probably find me exploring new ideas, 
+                                    finding inspiration in unexpected places, 
+                                    or making time for the little things that bring me joy.
                                 </p>
 
                                 <p className="about-interests-description">
-                                    These interests keep me creative, curious, and always
-                                    excited to learn something new.
+                                    Whether it's a tricky problem to untangle or a creative
+                                    project to get lost in, I'm always up for the challenge!
                                  </p>
 
-                                <Sparkles className="about-decoration" size={32} />
+                                <Heart className="about-decoration" size={32} />
                             </div>
                         </section>
                     )}
