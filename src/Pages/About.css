@@ -347,12 +347,22 @@ About.css: About page styles
     object-fit: contain;
     object-position: bottom;
 
+    /* Soft emerald glow */
+    filter:
+        drop-shadow(0 0 12px rgba(47, 254, 47, 0.20))
+        drop-shadow(0 0 28px rgba(47, 254, 47, 0.12));
+
+    /* Fade bottom into background */
     mask-image: linear-gradient(
         to bottom,
         black 0%,
         black 85%,
         transparent 100%
     );
+
+    transition:
+        filter 0.35s ease,
+        transform 0.35s ease;
 }
 
 /* Right: Personal description */

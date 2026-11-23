@@ -7,6 +7,7 @@ import { SixteenthNotes, Gamepad2, FerrisWheel, Palette, ChevronLeft, ChevronRig
 import { Button } from '../Components/Button.jsx'
 import { GlobeIcon } from '../Components/GlobeIcon.jsx'
 import me from '../assets/me.png'
+import julysanimation from '../assets/julysanimation.png'
 import './About.css'
 
 
@@ -130,8 +131,7 @@ export function About() {
                             {/* Personal interests */}
                             <div className="about-beyond-interests">
                                 <h2 className="about-beyond-title">
-                                        Beyond work...
-                                        <Sparkles size={25} />
+                                    My interests:
                                 </h2>
 
                                 <div className="about-interests-grid">
@@ -159,14 +159,14 @@ export function About() {
 
                             {/* Personal illustration */}
                             <div className="about-beyond-image">
-                                <img src={me} alt="Julia's picture"/>
+                                <img src={julysanimation} alt="Julia's animated character"/>
                             </div>
 
                             {/*Short description */}
                             <div className="about-beyond-content">
                                 <h2 className="about-beyond-subtitle">
-                                    A little more about me
-                                    <Heart className="about-heart" size={30} />
+                                    Beyond work...
+                                    <Sparkles size={25} />
                                 </h2>
 
                                  <div className="about-beyond-underline" />
