@@ -84,6 +84,19 @@ Home.css: Home styles
 
     border: none;
     filter: drop-shadow(0 0 8px var(--accent));
+
+    transition:
+        filter 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* Profile picture hover */
+.home-image img:hover {
+    filter:
+        drop-shadow(0 0 15px rgba(47, 254, 47, 0.7))
+        drop-shadow(0 0 30px rgba(47, 254, 47, 0.35));
+
+    transform: scale(1.03);
 }
 
 /* Tablet and mobile */
@@ -112,5 +125,15 @@ Home.css: Home styles
 
     .home-image img {
         max-width: 240px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-image img {
+        transition: none;
+    }
+
+    .home-image img:hover {
+        transform: none;
     }
 }
