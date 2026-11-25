@@ -20,7 +20,7 @@ About.css: About page styles
 /* Centered page heading */
 .about-header {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 24px;
 }
 
 .about-header h1 {
@@ -72,8 +72,15 @@ About.css: About page styles
 
 /* Slide content */
 .about-slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     width: 100%;
     min-width: 0;
+    height: 60vh;
+    min-height: 0;
+    flex-shrink: 0;
 }
 
 /* Navigation arrows */
@@ -128,7 +135,7 @@ About.css: About page styles
     justify-content: center;
     gap: 12px;
 
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 .about-dot {
@@ -180,7 +187,7 @@ About.css: About page styles
     display: block;
     width: 100%;
     max-width: 490px;
-    max-height: 65vh;
+    max-height: 60vh;
     height: auto;
     object-fit: contain;
 
@@ -228,12 +235,13 @@ About.css: About page styles
 /* Three-column layout */
 .about-beyond {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1fr);
     align-items: center;
     gap: 20px;
 
     width: 100%;
-    min-height: min(540px, 60vh);
+    height: 100%;
+    min-height: 0;
 }
 
 /* Left: Personal interests */
@@ -332,37 +340,37 @@ About.css: About page styles
     align-items: flex-end;
     justify-content: center;
 
+    position: relative;
     width: 100%;
     height: 100%;
     min-width: 0;
+    overflow: visible;
+
+    /* Soft emerald contour glow */
+    filter:
+        drop-shadow(0 0 12px rgba(47, 254, 47, 0.20))
+        drop-shadow(0 0 28px rgba(47, 254, 47, 0.12));
 }
 
 .about-beyond-image img {
     display: block;
     width: 100%;
-    max-width: 480px;
+    max-width: 520px;
     max-height: 60vh;
     height: auto;
 
     object-fit: contain;
     object-position: bottom;
 
-    /* Soft emerald glow */
-    filter:
-        drop-shadow(0 0 12px rgba(47, 254, 47, 0.20))
-        drop-shadow(0 0 28px rgba(47, 254, 47, 0.12));
-
     /* Fade bottom into background */
     mask-image: linear-gradient(
         to bottom,
         black 0%,
-        black 85%,
+        black 96%,
         transparent 100%
     );
 
-    transition:
-        filter 0.35s ease,
-        transform 0.35s ease;
+    transition: transform 0.35s ease;
 }
 
 /* Right: Personal description */
@@ -401,9 +409,10 @@ About.css: About page styles
 
 /* Decorative underline */
 .about-beyond-underline {
-    width: 160px;
-    height: 3px;
-    margin-top: -14px;
+    width: 90%;
+    max-width: 320px;
+    height: 5px;
+    margin-top: -20px;
 
     background: #2FFE2F;
     border-radius: 50%;
@@ -496,6 +505,10 @@ About.css: About page styles
     .about-content {
         align-items: center;
         text-align: center;
+    }
+
+    .about-slide-content {
+        min-height: auto;
     }
 
     .about-image img {

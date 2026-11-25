@@ -3,7 +3,7 @@ Home.jsx: First page of the Portfolio
 */
 import { Download } from 'lucide-react'
 import { Button } from '../Components/Button.jsx'
-import julypicture from '../assets/julypicture.png'
+import julypicture from '../assets/julypicture.webp'
 import Julia_Pinedo_CV from '../assets/Julia_Pinedo_CV.pdf'
 import './Home.css'
 

@@ -7,6 +7,15 @@ import { Education } from './Pages/Education.jsx'
 import { Projects } from './Pages/Projects.jsx'
 import { Contact } from './Pages/Contact.jsx'
 import { Layout } from './Layout.jsx'
+import me from './assets/me.webp'
+import julysanimation from './assets/julysanimation.webp'
+
+const aboutImages = [me, julysanimation]
+
+aboutImages.forEach((src) => {
+    const image = new Image()
+    image.src = src
+})
 
 function App() {
 

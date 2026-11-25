@@ -3,11 +3,11 @@ About.jsx: Second page of the Portfolio
 */
 import { useState } from 'react'
 import { FaGithub, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa'
-import { SixteenthNotes, Gamepad2, FerrisWheel, Palette, ChevronLeft, ChevronRight, Heart, Sparkles } from 'lucide-react'
+import { SixteenthNotes, Gamepad2, FerrisWheel, Palette, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react'
 import { Button } from '../Components/Button.jsx'
 import { GlobeIcon } from '../Components/GlobeIcon.jsx'
-import me from '../assets/me.png'
-import julysanimation from '../assets/julysanimation.png'
+import me from '../assets/me.webp'
+import julysanimation from '../assets/julysanimation.webp'
 import './About.css'
 
 
@@ -54,7 +54,7 @@ export function About() {
                         <section className="about-intro">
                             {/* My picture */}
                             <div className="about-image">
-                                <img src={me} alt="Julia's picture"/>
+                                <img src={me} alt="Julia's picture" loading="eager" decoding="async" />
                             </div>
 
                             {/* Text introduction */}
@@ -134,6 +134,8 @@ export function About() {
                                     My interests:
                                 </h2>
 
+                                <div className="about-beyond-underline" />
+
                                 <div className="about-interests-grid">
                                      <div className="interest-card">
                                         <SixteenthNotes size={40} strokeWidth={1.7} />
@@ -159,17 +161,14 @@ export function About() {
 
                             {/* Personal illustration */}
                             <div className="about-beyond-image">
-                                <img src={julysanimation} alt="Julia's animated character"/>
+                                <img src={julysanimation} alt="Julia's animated character" loading="eager" decoding="async" />
                             </div>
 
                             {/*Short description */}
                             <div className="about-beyond-content">
                                 <h2 className="about-beyond-subtitle">
                                     Beyond work...
-                                    <Sparkles size={25} />
                                 </h2>
-
-                                 <div className="about-beyond-underline" />
 
                                  <p className="about-interests-description">
                                     When I'm not working on engineering projects, 
@@ -183,7 +182,7 @@ export function About() {
                                     project to get lost in, I'm always up for the challenge!
                                  </p>
 
-                                <Heart className="about-decoration" size={32} />
+                                 <Sparkles className="about-decoration" size={32} />
                             </div>
                         </section>
                     )}
