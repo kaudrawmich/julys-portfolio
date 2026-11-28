@@ -354,7 +354,6 @@ Skills.css: Skills page styles
     justify-content: center;
     gap: 12px;
 
-    font-family: 'Kalam', cursive;
     font-size: clamp(1.8rem, 2.5vw, 2.5rem);
     font-weight: 700;
     line-height: 1.2;
@@ -366,20 +365,6 @@ Skills.css: Skills page styles
 
 .skills-section-title svg {
     flex-shrink: 0;
-}
-
-/* Decorative underline */
-.skills-underline {
-    align-self: center;
-
-    width: 70%;
-    max-width: 200px;
-    height: 4px;
-    margin-top: -12px;
-
-    background: #2FFE2F;
-    border-radius: 50%;
-    transform: rotate(-2deg);
 }
 
 /* Vertically stacked language cards */

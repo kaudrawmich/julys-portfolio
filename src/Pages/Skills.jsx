@@ -1,7 +1,7 @@
 /* 
 Skills.jsx: Third page of the Portfolio
 */
-import { CodeXml, Wrench, BrainCircuit, Cpu, Server, FileCodeCorner } from 'lucide-react'
+import { CodeXml, Wrench, BrainCircuit, Cpu, Server, FileCodeCorner, Flag, Languages } from 'lucide-react'
 import { SiPython, SiJavascript, SiReact, SiHtml5, SiBamboo, SiSiemens, SiPerforce, SiFastapi, SiPostman, SiVite, SiJupyter, SiPycharm } from 'react-icons/si'
 import { FaCss3Alt, FaGitAlt, FaBitbucket } from 'react-icons/fa'
 import { VscVscode } from "react-icons/vsc"
@@ -86,6 +86,20 @@ const technicalSkills = [
 
 ]
 
+/* Soft skills */
+const softSkills = [
+    { name: 'Leadership', icon: Flag },
+]
+
+/* Languages */
+const languages = [
+    {
+        name: 'Spanish',
+        nativeName: 'Español',
+        level: 'Native proficiency'
+    },
+]
+
 
 export function Skills() {
     console.log('Skills page rendered...')
@@ -156,11 +170,53 @@ export function Skills() {
                     </div>
                 </section>
 
-                {/* Column #2: "Soft skills" */}
+                {/* Column #2: "Soft skills & languages" */}
                 <section className="skills-column">
                     <h2 className="skills-column-title" id="personal-title">
-
+                        Soft skills & languages
                     </h2>
+
+                    {/* Scrollable content */}
+                    <div className="skills-scroll" tabIndex={0} role="region" aria-labelledby="personal-title">
+                        <div className="skills-soft-grid">
+                            {softSkills.map((skill) => {
+                                const SkillIcon = skill.icon
+
+                                return (
+                                    /* Soft skills */
+                                    <article className="skills-soft-card" key={skill.name}>
+                                        <SkillIcon size={32} strokeWidth={1.7} aria-hidden="true" />
+                                        <h4>{skill.name}</h4>
+                                    </article>
+                                )
+                            })}
+                        </div>
+
+                        {/* Languages */}
+                        <section className="skills-languages">
+                            <h3 className="skills-section-title">
+                                <Languages size={26} aria-hidden="true" />
+                                Languages
+                            </h3>
+
+                            {/* Language cards */}
+                            <div className="skills-languages-grid">
+                                {languages.map((language) => (
+                                    <article className="skills-language-card" key={language.name}>
+                                        <div className="skills-language-header">
+                                            <h4>{language.name}</h4>
+                                            {language.nativeName !== language.name && (
+                                                <span className="skills-native-name">
+                                                    {language.nativeName}
+                                                </span>
+                                            )}
+                                        </div>
+                                        <p>{language.level}</p>
+                                    </article>
+                                ))}
+                            </div>
+                        </section>
+                    </div>
                 </section>
             </div>
         </main>
