@@ -155,6 +155,13 @@ export function Skills() {
                         </div>
                     </div>
                 </section>
+
+                {/* Column #2: "Soft skills" */}
+                <section className="skills-column">
+                    <h2 className="skills-column-title" id="personal-title">
+
+                    </h2>
+                </section>
             </div>
         </main>
     )
