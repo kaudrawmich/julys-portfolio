@@ -1,0 +1,623 @@
+/*
+Skills.css: Skills page styles
+*/
+
+
+/* Main page container */
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    padding: 0 40px 16px;
+    box-sizing: border-box;
+
+    height: auto;
+    flex-shrink: 0;
+
+    --skills-panel-height: 58dvh;
+    --skills-panel-background: rgba(47, 254, 47, 0.045);
+    --skills-card-background: #103524;
+    --skills-tag-background: #19452e;
+}
+
+
+/* PAGE HEADING */
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.skills-header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+
+    color: white;
+    margin: 0;
+}
+
+.skills-title-text {
+    display: inline;
+    color: white;
+}
+
+.skills-title-text span {
+    color: #2FFE2F;
+}
+
+.skills-heading-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: white;
+    filter: drop-shadow(0 0 6px #2FFE2F80);
+}
+
+
+/* TWO-COLUMN LAYOUT */
+
+.skills-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+
+    width: 100%;
+}
+
+/* Individual columns */
+.skills-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+/* Column headings */
+.skills-column-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.skills-column-title span {
+    color: #2FFE2F;
+}
+
+.skills-column-title svg {
+    color: #2FFE2F;
+    flex-shrink: 0;
+}
+
+
+/* SCROLLABLE CONTAINERS */
+
+.skills-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    height: var(--skills-panel-height);
+    min-width: 0;
+    min-height: 0;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    background: var(--skills-panel-background);
+    border: 1px solid rgba(47, 254, 47, 0.15);
+    border-radius: 24px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(47, 254, 47, 0.35)
+        transparent;
+}
+
+/* Prevent cards from shrinking inside containers */
+.skills-scroll > * {
+    flex-shrink: 0;
+}
+
+/* Scrollbar styling */
+.skills-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.skills-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 16px 0;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb {
+    background: rgba(47, 254, 47, 0.35);
+    border-radius: 10px;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(47, 254, 47, 0.65);
+}
+
+.skills-scroll:focus-visible {
+    outline: 2px solid #2FFE2F;
+    outline-offset: 4px;
+}
+
+
+/* SHARED CARD STYLES */
+
+.skills-technical-card,
+.skills-soft-card,
+.skills-language-card {
+    box-sizing: border-box;
+    min-width: 0;
+
+    background: var(--skills-card-background);
+    border: 1px solid rgba(47, 254, 47, 0.55);
+    border-radius: 18px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Card hover */
+.skills-technical-card:hover,
+.skills-soft-card:hover,
+.skills-language-card:hover {
+    border-color: #2FFE2F;
+
+    box-shadow:
+        0 0 12px rgba(47, 254, 47, 0.15),
+        inset 0 0 12px rgba(47, 254, 47, 0.04);
+
+    transform: translateY(-3px);
+}
+
+
+/* LEFT COLUMN: TECHNICAL TOOLBOX */
+
+/* Vertically stacked category cards */
+.skills-technical-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+
+    width: 100%;
+}
+
+/* Individual technical category */
+.skills-technical-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 16px 20px;
+
+    background: var(--skills-card-background);
+    border: 1px solid rgba(47, 254, 47, 0.55);
+    border-radius: 16px;
+}
+
+/* Category icons */
+.skills-category-icon {
+    color: #2FFE2F;
+    flex-shrink: 0;
+}
+
+/* Category headings */
+.skills-technical-card h3 {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.3;
+
+    color: white;
+    margin: 0;
+}
+
+/* Skill tags container */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+}
+
+/* Individual skill tags */
+.skills-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    min-height: 32px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    background: var(--skills-tag-background);
+    border-radius: 8px;
+
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+/* Technology logos */
+.skills-tag svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Skill tag hover */
+.skills-tag:hover {
+    background: rgba(47, 254, 47, 0.15);
+    transform: translateY(-2px);
+}
+
+
+/* RIGHT COLUMN: SOFT SKILLS */
+
+/* Two-column soft skills grid */
+.skills-soft-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    width: 100%;
+}
+
+/* Individual soft skill cards */
+.skills-soft-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 115px;
+    padding: 18px 12px;
+}
+
+/* Soft skill icons */
+.skills-soft-card svg {
+    color: #2FFE2F;
+    flex-shrink: 0;
+}
+
+/* Soft skill titles */
+.skills-soft-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* LANGUAGES */
+
+/* Languages section */
+.skills-languages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    min-width: 0;
+
+    padding-top: 20px;
+    border-top: 1px solid rgba(47, 254, 47, 0.15);
+}
+
+/* Languages heading */
+.skills-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-family: 'Kalam', cursive;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: #2FFE2F;
+    text-align: center;
+    margin: 0;
+}
+
+.skills-section-title svg {
+    flex-shrink: 0;
+}
+
+/* Decorative underline */
+.skills-underline {
+    align-self: center;
+
+    width: 70%;
+    max-width: 200px;
+    height: 4px;
+    margin-top: -12px;
+
+    background: #2FFE2F;
+    border-radius: 50%;
+    transform: rotate(-2deg);
+}
+
+/* Vertically stacked language cards */
+.skills-languages-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+
+    width: 100%;
+}
+
+/* Individual language cards */
+.skills-language-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 90px;
+    padding: 18px 20px;
+}
+
+/* Language names */
+.skills-language-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills-language-header h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: white;
+    margin: 0;
+}
+
+/* Native language name */
+.skills-native-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2FFE2F;
+}
+
+/* Language proficiency */
+.skills-language-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+
+    color: var(--text, #c9c5d6);
+    margin: 0;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+/* Compact desktop and laptop screens */
+@media (min-width: 1101px) and (max-height: 900px) {
+
+    .skills {
+        --skills-panel-height: 58dvh;
+    }
+
+    .skills-header {
+        margin-bottom: 18px;
+    }
+
+    .skills-header h1 {
+        font-size: clamp(2.8rem, 4.5vw, 4rem);
+    }
+
+    .skills-column {
+        gap: 14px;
+    }
+
+    .skills-scroll {
+        padding: 16px;
+    }
+
+    .skills-technical-card {
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .skills-soft-card {
+        min-height: 100px;
+    }
+}
+
+
+/* Medium desktop and tablet */
+@media (max-width: 1100px) {
+
+    .skills {
+        padding: 0 30px 24px;
+    }
+
+    .skills-layout {
+        gap: 20px;
+    }
+
+    .skills-scroll {
+        padding: 16px;
+    }
+
+    .skills-technical-card {
+        padding: 20px;
+    }
+
+    .skills-soft-card {
+        min-height: 100px;
+    }
+}
+
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
+
+    .skills {
+        padding: 24px 20px 32px;
+    }
+
+    .skills-header h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+        line-height: 1.2;
+    }
+
+    /* Stack both columns vertically */
+    .skills-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    /* Use natural page scrolling */
+    .skills-scroll {
+        height: auto;
+        overflow: visible;
+        padding: 16px;
+    }
+
+    .skills-column-title {
+        font-size: 1.6rem;
+    }
+
+    .skills-technical-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .skills-tag {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+
+    .skills {
+        padding: 30px 16px;
+    }
+
+    .skills-header h1 {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        letter-spacing: -1px;
+    }
+
+    .skills-scroll {
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .skills-column-title {
+        font-size: 1.4rem;
+    }
+
+    .skills-technical-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .skills-technical-card h3 {
+        font-size: 1rem;
+    }
+
+    .skills-tag {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+
+    .skills-tag svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .skills-soft-grid {
+        gap: 10px;
+    }
+
+    .skills-soft-card {
+        min-height: 95px;
+        padding: 12px 8px;
+    }
+
+    .skills-soft-card h4 {
+        font-size: 0.85rem;
+    }
+
+    .skills-soft-card svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .skills-language-card {
+        padding: 14px;
+    }
+
+    .skills-section-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .skills-technical-card,
+    .skills-soft-card,
+    .skills-language-card,
+    .skills-tag {
+        transition: none;
+    }
+
+    .skills-technical-card:hover,
+    .skills-soft-card:hover,
+    .skills-language-card:hover,
+    .skills-tag:hover {
+        transform: none;
+    }
+}
